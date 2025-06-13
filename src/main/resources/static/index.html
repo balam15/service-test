@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Toggle</title>
+</head>
+<body>
+    <button onclick="toggleText()">Click Me</button>
+    <p id="message">Hello World</p>
+
+    <script>
+        async function toggleText() {
+            const response = await fetch('/toggle');
+            const message = await response.text();
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+</body>
+</html>
